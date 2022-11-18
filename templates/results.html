@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Multi Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/"><span>Multimodal AI</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="/"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <!-- <li>Inner Page</li> -->
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">
+
+</div>
+    </section>
+
+        <!-- ======= F.A.Q Section ======= -->
+ <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Results</h2>
+          <p>Result Analysis</p>
+        </div>
+
+
+
+
+          <h2>Happiness Index: {{happiness_index}}</h2>
+          <h2>Emotion Detected(Video): {{emotion}}</h2>
+
+          <h2>{{Speech_Emotion}}</h2>
+          <h2>{{Text}}</h2>
+          <h2>{{Text_Emotion}}</h2>
+          <h2>Label: {{label}}</h2>
+
+        </div>
+
+      </div>
+    </section>
+
+
+     <section id="services" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Recommended Hospitals</h2>
+          <p>Hospitals and Medicals Nearby</p>
+        </div>
+  <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDjXQWn6VopL_UcO4q6n1MYEOQrY7A7K8&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <style>
+      #map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+    </style>
+    <script>
+      // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: 19.9643726, lng: 73.6680926 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+map = new google.maps.Map(document.getElementById('map'), {
+        center: pyrmont,
+        zoom: 17
+    });
+
+    // Create the places service.
+   var map;
+var service;
+var infowindow;
+
+function initialize() {
+  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
+
+  var request = {
+    location: pyrmont,
+    radius: '5000',
+    type: ['restaurant']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarkers(places) {
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0, place; place = places[i]; i++) {
+        var image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location
+        });
+        bounds.extend(place.geometry.location);
+    }
+    map.fitBounds(bounds);
+}
+window.initMap = initMap;
+    </script>
+
+
+        </div>
+    </section>
+
+
+      <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Recommended Doctors</h2>
+          <p>Experts of this Domain</p>
+        </div>
+
+        <div class="row" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+              <div class="pic"><img src="static/assets/img/team/team-1.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr Y K Mishra</h4>
+                <span>MBBS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="pic"><img src="static/assets/img/team/team-2.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr. H. S. Chhabra</h4>
+                <span>BHMS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+              <div class="pic"><img src="static/assets/img/team/team-3.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr IPS Oberoi</h4>
+                <span>Master of Surgery - MS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="member" data-aos="zoom-in" data-aos-delay="400">
+              <div class="pic"><img src="static/assets/img/team/team-4.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Dr. Sandeep Vaishya </h4>
+                <span>Doctor of Medicine - MD</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+
+      <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Insurance Partners</h2>
+            <p>Experts of this Domain</p>
+        </div>
+
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Cliens Section -->
+        </div>
+    </section><!-- End Team Section -->
+
+
+         <!-- ======= Contact Section ======= -->
+    <section id="insurance" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Claim Medical Insurance</h2>
+          <p>Calculate your Insurance</p>
+        </div>
+
+        <!-- ======= Insurance Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="static/assets/img/insurance.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>Calculate your medical Insurance and claim from our partnered companies.</h3>
+            <p class="fst-italic">
+              We have partnered up with some legitimate medical insurance companies which would give you health insurance at right amount.
+                Calculate the Insurance amount for your medical Insurance
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Calculates accurate insurance amount.</li>
+              <li><i class="bi bi-check"></i> Legitimate Insurance providing companies.</li>
+              <li><i class="bi bi-check"></i> Easy to claim insurance process.</li>
+              <li><i class="bi bi-check"></i> Guaranteed authenticity.</li>
+            </ul>
+            <p>
+              Click the link below to calculate your health insurance
+            </p>
+
+              <a href="/insurance_form" class="btn-get-started scrollto">Calculate Insurance</a>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- End insurance Section -->
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+
+
+          <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </div>
+        {% if label == 'health'%}
+              <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                Is Stress Inevitably Harmful To Health?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                 Actually, no. There are several different types of stress that range from eustress, which is a positive and exciting form of stress, to chronic stress, which has been linked to many serious health issues and is the type of negative stress most often mentioned in the news. While we want to manage or eliminate the negative types of stress, we also want to keep positive forms of stress in our lives to help us remain vital and alive. However, if we experience too much stress in our lives, even “good” stress can contribute to excessive stress levels, which can lead to feeling overwhelmed or having your stress response triggered for too long. This is why it is still important to learn to relax your body and mind periodically and cut down on unnecessary stress whenever possible.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+                How Can I Tell When I’m Too Stressed?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Stress affects us all in different ways, not all of which are negative. (In fact, the stress of an exciting life can actually serve as a good motivator and keep things interesting.) When stress levels get too intense, however, there are some stress symptoms that many people experience. For example, headaches, irritability, and ‘fuzzy thinking’ can all be symptoms that you’re under too much stress. While not everybody who’s under stress will experience these specific symptoms, many will. If you find that you don’t realize how stressed you are until you are overwhelmed, it’s important to learn to notice your body’s subtle cues and your own behavior, almost like an outside observer might.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                What Can I Do When I Feel Overwhelmed by Stress?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  We all feel overwhelmed from time to time; that’s normal. While it’s virtually impossible to eliminate times when events conspire and the body’s stress response is triggered, there are ways that you can quickly reverse your body’s reaction to stress, buffering the damage to your health and keeping your thinking clear, so you can more effectively deal with what’s going on in the moment.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+               Is There a Way to Be Less Affected by Stress?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Actually, by practicing a regular stress management technique or two, you can eliminate some of the stress you feel right now and make yourself more resilient in the face of stress in the future. There are several different things you can try, ranging from a morning walk to an evening journaling practice to just making more time for friends. The trick is to find something that fits with your lifestyle and personality, so it’s easier to stick with.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+           I AM ALWAYS STRESSED OUT – WHY IS THAT?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                A lot of people wonder why they are always stressed. They feel that regardless of the things happening in their life, whether positive or negative, they still find a way to feel stressed out. This stress is often the result of their doing. They tend to overthink and overanalyze everything; hence, they tend to see problems even when none exist.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        {% elif label == 'psychological'%}
+
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+               Stress is usually thought of as a negative experience, but it can be a positive one. True or False?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  True. Stress in small doses can be beneficial for us in terms of increased energy and mental alertness. This type of stress is considered good. For example, feeling mildly stressed when carrying out a project or assignment often compels us to do a good job, focus better, and work energetically.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+               It is possible to eliminate stress. True or False?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+               False. Eliminating stress from life is not only impossible, it is unrealistic. For people prone to the negative effects of stress, stress management is important for physical and mental well-being.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+               Chronic stress is constant and persists over time. True or False?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+               True. According to the American Psychological Association, chronic stress is constant and persists over an extended period of time. Chronic stress can become difficult for the body to manage and can be psychologically and physically debilitating.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                The hormone known as cortisol helps the body manage stress. True or False?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+           True. Adrenal glands manufacture the hormone cortisol as well as adrenaline, both of which help the body manage responses to stress and convert sugar and fat to energy. Excess cortisol is secreted during times of physical or psychological stress, and the normal pattern of cortisol secretion (with levels highest in the early morning and lowest at night) can be altered.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+               Physical symptoms of stress may include what?
+
+              <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Headache, gastrointestinal disturbances, sleep problems, muscle tension, muscle ache, muscle pain, and fatigue. Common physical signs and symptoms of excess stress can include sleeping problems, gastrointestinal disturbances, muscle tension, muscle aches, muscle pain, fatigue, and headache, including migraines. Emotional and behavioral signs and symptoms can include nervousness, irritability, anxiety, changes in eating habits, loss of energy and enthusiasm, and depression.
+
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        {% elif label == 'financial'%}
+  <!-- ======= ------------------------------------------------------------------------------------------------------- ======= -->
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+                What’s my actual monthly income after taxes?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                 Many people (even those with steady paychecks) don’t precisely know this information. Sometimes you land unexpected income. More often, you get hit with larger-than-expected withholdings, taxes, or fees.
+
+This number may be less than you want or need. But having as firm a grasp as possible on your income will help you feel better prepared, while avoiding credit card debt and overdraft fees.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+              What are my specific upcoming expenses and payment obligations?
+
+              <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Most people are surprised by how much they’re really obligated to spend each month. Typical payment obligations include:
+
+Rather than estimating your monthly expenses, take time to actually review a few months of past transactions.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+                What’s safe for me to spend?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                   Regardless of income, “how much can I safely spend” is one of the most common money questions. This is true for everyday “walking around money,” as well as for larger upcoming expenses.
+
+Most of us juggle multiple bank accounts, credit cards, and upcoming bills, so it can be hard to know what’s available to spend. Plus, some people only consider cash safe-to-spend, while others are comfortable using credit (within limits).
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+                How much do I have on hand for emergencies?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                 The best time to build an emergency fund was five years ago. The second-best time is today. Depending on your financial situation, it may seem like an insurmountable task. But even putting aside a few dollars can make a positive impact.
+
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+             What do I currently owe on each account? How much in total?
+                <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                Many people dread knowing this number. Student loans and medical debt in particular can feel insurmountable.
+
+But again, uncertainty itself is very stressful. And when you know what you owe, you’ll be in a far better position to make a plan and get help for paying it off.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+
+        {% endif %}
+
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+
+    <style>
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+.clients {
+  padding: 12px 0;
+  text-align: center;
+}
+
+.clients img {
+  max-width: 45%;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  padding: 15px 0;
+  filter: none;
+}
+
+.clients img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .clients img {
+    max-width: 40%;
+  }
+}
+</style>
+
+ <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Book an Appointment</h2>
+          <p>Appointment Details</p>
+        </div>
+
+        <div class="row">
+
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+
+            <form action="/send-data" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="time" id="time" placeholder="Timing Slot" required>
+              </div>
+
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="hospital" id="hospital" placeholder="Hospital Details" required>
+              </div>
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+<!--                <div class="loading">Loading</div>-->
+<!--                <div class="error-message d-block">Status:</div>-->
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+    {% if label == 'psychological'%}
+
+    {% elif label == 'health'%}
+    {% elif label == 'financial'%}
+    {% else %}
+    {% endif %}
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Multimodal AI</h3>
+              <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Multimodal AI</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">Multimodal AI</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+ <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
