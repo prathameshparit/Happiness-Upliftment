@@ -6,6 +6,9 @@ Welcome to the Happiness Index Predictor project! This project aims to predict a
 
 To achieve this, we have implemented multiple machine learning models and developed a full-fledged website to collect and analyze data from the user.
 
+## Demo
+![IMG](https://github.com/prathameshparit/Identify-Happiness-Index/blob/b50854b223d562dc9e1ffc2f9225c2a0f78f660b/Emotion.gif?raw=true)
+
 ## Data Collection
 To predict a person's happiness index, we collect the following data from the user:
 
