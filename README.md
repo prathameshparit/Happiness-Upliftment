@@ -1,5 +1,5 @@
 # Identify-Happiness-Index
-
+ 
 **Problem Statement:** Uplifting your Happiness Index infusing Digital Technology Theme : AIML Description: Identify and gather Happiness Index using different sources like human behaviour, life style etc. Detect stress management. Proactively provide recommendation to increase Happiness Index Expectations: Uplifting Happiness
 
 Welcome to the Happiness Index Predictor project! This project aims to predict a person's happiness index and provide recommendations for improving it.
