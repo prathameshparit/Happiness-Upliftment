@@ -38,3 +38,4 @@ We have developed a website using the Flask framework to allow users to easily i
 Based on the data collected and analyzed, our machine learning models provide recommendations for improving the user's happiness index. These recommendations may include suggestions for increasing social support, improving healthy habits, or increasing generosity and reducing perceptions of corruption.
 
 We hope that this project will help users to improve their happiness and overall well-being.
+   
